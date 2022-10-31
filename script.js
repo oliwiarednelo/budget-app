@@ -42,6 +42,7 @@ budgetButton.addEventListener("click", () => {
      
                 balanceOutput.innerText = currentBalance;
                 acceptValue();
+                expTitle.value = "";
       expenseInput.value = "";
     }
   });
