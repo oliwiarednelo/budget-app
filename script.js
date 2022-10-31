@@ -15,37 +15,33 @@ let currentBalance = 0;
 
 
 budgetButton.addEventListener("click", () => {
-    let newAmount = budgetInput.value;
+    newAmount = budgetInput.value;
 
-        if (newAmount === "" || newAmount < 0) {
-            console.log("failure")
-    } else {
-        console.log("success")
-        budgetOutput.innerHTML = newAmount;
-             balanceOutput.innerHTML = newAmount - currExpenseAmount;
-                 budgetInput.value = "";
-                
-    }
-  });
+    if (newAmount.length > 0) {
+      budgetOutput.innerHTML = newAmount;
+           balanceOutput.innerHTML = newAmount - currExpenseAmount;
+               budgetInput.value = "";
+              
+  }
+});
 
- expenseButton.addEventListener("click", () => {
-    let currAmount = newAmount;
-      let newExpenseAmount = expenseInput.value;
-      
-        if (newExpenseAmount === "" || newExpenseAmount < 0) {
-              console.log("failure")
-    } else {
-      console.log("success")
-        currExpenseAmount += parseInt(newExpenseAmount);
-            expenseOutput.innerHTML = currExpenseAmount;
-                currentBalance = currAmount - currExpenseAmount;
-     
-                balanceOutput.innerText = currentBalance;
+
+expenseButton.addEventListener("click", () => {
+  let currAmount = newAmount;
+    let newExpenseAmount = expenseInput.value;
+
+      if (newExpenseAmount.length > 0) {
+      currExpenseAmount += parseInt(newExpenseAmount);
+          expenseOutput.innerHTML = currExpenseAmount;
+            currentBalance = currAmount - currExpenseAmount;
+               balanceOutput.innerHTML = currentBalance; 
+           
                 acceptValue();
-                expTitle.value = "";
-      expenseInput.value = "";
-    }
-  });
+                  
+                  expTitle.value = "";
+                    expenseInput.value = "";
+  }
+});
  
 let data = {};
 
